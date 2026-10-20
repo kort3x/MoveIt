@@ -20,7 +20,7 @@ foreach ($nummer in Get-Content $ListenDatei) {
 
     foreach ($ordner in Get-ChildItem $ProjektOrdner -Directory -Filter "$nummer*") {
         Move-Item $ordner.FullName $ArchivOrdner
-        Write-Host "Verschoben: $($ordner.Name)"
+        Write-Host "Verschoben: $($ordner.Name)" -ForegroundColor Green
     }
 }
 

@@ -86,7 +86,7 @@ if (-not $projektNummern) {
     return
 }
 
-Write-Host "Projektnummern aus der Liste: $($projektNummern -join ', ')"
+Write-Host "Projektnummern aus der Liste: $($projektNummern -join ', ')" -ForegroundColor Cyan
 
 
 # --- Schritt 2: Passende Verzeichnisse im Projektordner finden ---------------------
@@ -108,7 +108,7 @@ $treffer = foreach ($verzeichnis in $verzeichnisse) {
 }
 
 if (-not $treffer) {
-    Write-Host 'Kein Verzeichnis im Projektordner passt zu den Nummern auf der Liste.'
+    Write-Host 'Kein Verzeichnis im Projektordner passt zu den Nummern auf der Liste.' -ForegroundColor Yellow
     return
 }
 
@@ -138,7 +138,7 @@ foreach ($verzeichnis in $treffer) {
     # nur eine Meldung aus und liefert $false - dann wird nichts verschoben.
     if ($PSCmdlet.ShouldProcess($verzeichnis.FullName, "Verschieben nach $ArchivOrdner")) {
         Move-Item -Path $verzeichnis.FullName -Destination $ziel
-        Write-Host "Verschoben: $($verzeichnis.Name)"
+        Write-Host "Verschoben: $($verzeichnis.Name)" -ForegroundColor Green
         $verschoben++
     }
 }
@@ -153,8 +153,8 @@ $ohneTreffer = $projektNummern | Where-Object { $gefundeneNummern -notcontains $
 
 Write-Host ''
 Write-Host "Passende Verzeichnisse: $(@($treffer).Count)"
-Write-Host "Verschoben:             $verschoben"
-Write-Host "Uebersprungen:          $uebersprungen"
+Write-Host "Verschoben:             $verschoben" -ForegroundColor Green
+Write-Host "Uebersprungen:          $uebersprungen" -ForegroundColor Yellow
 if ($ohneTreffer) {
     Write-Warning "Kein Verzeichnis gefunden fuer: $($ohneTreffer -join ', ')"
 }

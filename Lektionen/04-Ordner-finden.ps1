@@ -12,10 +12,10 @@ $ProjektOrdner = "$PSScriptRoot\..\Testumgebung\Projekte"
 $ArchivOrdner  = "$PSScriptRoot\..\Testumgebung\Archiv"
 
 foreach ($nummer in Get-Content $ListenDatei) {
-    Write-Host "Nummer [$nummer]:"
+    Write-Host "Nummer [$nummer]:" -ForegroundColor Cyan
 
     foreach ($ordner in Get-ChildItem $ProjektOrdner -Directory -Filter "$nummer*") {
-        Write-Host "   gefunden: $($ordner.Name)"
+        Write-Host "   gefunden: $($ordner.Name)" -ForegroundColor Yellow
     }
 }
 

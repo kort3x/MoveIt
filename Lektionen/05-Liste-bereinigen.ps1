@@ -16,10 +16,10 @@ foreach ($nummer in Get-Content $ListenDatei) {
     # Leere Zeilen ueberspringen - sonst wuerde der Filter "*" ALLE Ordner finden!
     if ($nummer -eq '') { continue }
 
-    Write-Host "Nummer [$nummer]:"
+    Write-Host "Nummer [$nummer]:" -ForegroundColor Cyan
 
     foreach ($ordner in Get-ChildItem $ProjektOrdner -Directory -Filter "$nummer*") {
-        Write-Host "   gefunden: $($ordner.Name)"
+        Write-Host "   gefunden: $($ordner.Name)" -ForegroundColor Yellow
     }
 }
 

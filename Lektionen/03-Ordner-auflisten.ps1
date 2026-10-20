@@ -12,7 +12,7 @@ $ProjektOrdner = "$PSScriptRoot\..\Testumgebung\Projekte"
 $ArchivOrdner  = "$PSScriptRoot\..\Testumgebung\Archiv"
 
 foreach ($ordner in Get-ChildItem $ProjektOrdner -Directory) {
-    Write-Host "Ordner: $($ordner.Name)"
+    Write-Host "Ordner: $($ordner.Name)" -ForegroundColor Yellow
 }
 
 # Aufgabe: Gib statt .Name einmal .FullName aus. Was ist der Unterschied?

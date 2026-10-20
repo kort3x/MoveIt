@@ -10,6 +10,6 @@ foreach ($nummer in Get-Content $ListenDatei) {
 
     foreach ($ordner in Get-ChildItem $ProjektOrdner -Directory -Filter "$nummer*") {
         Move-Item $ordner.FullName $ArchivOrdner -Confirm
-        Write-Host "Verschoben: $($ordner.Name)"
+        Write-Host "Verschoben: $($ordner.Name)" -ForegroundColor Green
     }
 }

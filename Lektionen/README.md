@@ -10,7 +10,7 @@ Vorher einmal die Testumgebung anlegen (im Hauptordner):
 
 | Lektion | Thema | Neu |
 |---|---|---|
-| [01-Variablen.ps1](01-Variablen.ps1) | Pfade speichern und anzeigen | `$variable`, `Write-Host`, `$PSScriptRoot` |
+| [01-Variablen.ps1](01-Variablen.ps1) | Pfade speichern und anzeigen | `$variable`, `Write-Host -ForegroundColor`, `$PSScriptRoot` |
 | [02-Datei-lesen.ps1](02-Datei-lesen.ps1) | Projektnummern lesen | `Get-Content`, `foreach` |
 | [03-Ordner-auflisten.ps1](03-Ordner-auflisten.ps1) | Projektordner auflisten | `Get-ChildItem -Directory`, `.Name`, `$( )` |
 | [04-Ordner-finden.ps1](04-Ordner-finden.ps1) | Passende Ordner finden, nur anschauen | Schleife in Schleife, `-Filter`, `*` |
