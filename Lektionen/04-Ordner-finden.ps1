@@ -19,6 +19,45 @@ foreach ($nummer in Get-Content $ListenDatei) {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Schau dir die Ausgabe genau an. Zwei Dinge stimmen noch nicht:
 #   1. Die Nummer "  330  " findet nichts. Warum?
 #   2. Bei der leeren Zeile werden ALLE Ordner gefunden. Warum?

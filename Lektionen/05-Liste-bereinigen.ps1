@@ -23,5 +23,39 @@ foreach ($nummer in Get-Content $ListenDatei) {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Vergleiche die Ausgabe mit Lektion 4.
 # Aufgabe: Fuer die Nummer 999 gibt es keinen Ordner. Ist das ein Problem?
