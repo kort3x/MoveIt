@@ -17,7 +17,7 @@ $ArchivOrdner  = "$PSScriptRoot\..\Testumgebung\Archiv"
 
 Write-Host "Liste:     $ListenDatei" -ForegroundColor Magenta
 Write-Host "Projekte:  $ProjektOrdner" -ForegroundColor Cyan
-Write-Host "Archiv:    $ArchivOrdner" -ForegroundColor darkcyan
+Write-Host "Archiv:    $ArchivOrdner" -ForegroundColor gray
 
 # Aufgabe: Gib zusaetzlich deinen Namen aus. Lege dafuer eine Variable $Name an.
 # Aufgabe: Gib deinen Namen in einer anderen Farbe aus.
