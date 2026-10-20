@@ -10,10 +10,10 @@ Die Liste ist eine Textdatei mit einer Nummer pro Zeile. Leere Zeilen und Zeilen
 
 ```powershell
 # 1. Immer zuerst ein Probelauf: zeigt nur an, was passieren würde
-.\extra\MoveIt.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv -WhatIf
+.\extra\MoveItRealGood.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv -WhatIf
 
 # 2. Wenn alles stimmt: wirklich verschieben
-.\extra\MoveIt.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv
+.\extra\MoveItRealGood.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv
 ```
 
 Regeln:
@@ -23,7 +23,7 @@ Regeln:
 - Liegt im Archiv schon ein Ordner mit demselben Namen, wird nichts überschrieben. Das Skript gibt dann eine Warnung aus.
 - Am Ende sagt das Skript, für welche Nummern es kein Verzeichnis gefunden hat. Das ist wichtig für die Rückmeldung an den Kunden.
 
-Hilfe zum Skript gibt es mit `Get-Help .\extra\MoveIt.ps1 -Full`.
+Hilfe zum Skript gibt es mit `Get-Help .\extra\MoveItRealGood.ps1 -Full`.
 
 ## Für Azubis: zum Ausprobieren
 
@@ -31,14 +31,14 @@ Zum Einstieg: Im Ordner [Lektionen](Lektionen/) entsteht das Skript Schritt für
 
 ```powershell
 .\New-Testumgebung.ps1      # legt den Ordner .\Testumgebung mit Beispieldaten an
-.\extra\MoveIt.ps1 -ListenDatei .\Testumgebung\Projektnummern.txt `
+.\extra\MoveItRealGood.ps1 -ListenDatei .\Testumgebung\Projektnummern.txt `
              -ProjektOrdner .\Testumgebung\Projekte `
              -ArchivOrdner .\Testumgebung\Archiv -WhatIf
 ```
 
 Danach ohne `-WhatIf` ausführen und im Explorer nachsehen. `New-Testumgebung.ps1` setzt alles wieder auf den Anfang zurück.
 
-Was du in [extra/MoveIt.ps1](extra/MoveIt.ps1) lernen kannst (die Kommentare im Skript erklären es):
+Was du in [extra/MoveItRealGood.ps1](extra/MoveItRealGood.ps1) lernen kannst (die Kommentare im Skript erklären es):
 
 | Thema | Wo im Skript |
 |---|---|

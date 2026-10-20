@@ -1,6 +1,6 @@
 # MoveIt in Lektionen
 
-In sieben Schritten entsteht das Skript `MoveIt-MVP.ps1`. Jede Lektion ist ein eigenes, lauffähiges Skript und baut auf der vorherigen auf.
+In sieben Schritten entsteht das Skript `..\MoveIt.ps1`. Jede Lektion ist ein eigenes, lauffähiges Skript und baut auf der vorherigen auf.
 
 Vorher einmal die Testumgebung anlegen (im Hauptordner):
 
@@ -24,4 +24,4 @@ Lektion 4 ist absichtlich noch fehlerhaft: Eine leere Zeile in der Liste findet 
 
 Nach Lektion 6 sind die Ordner verschoben. Mit `.\New-Testumgebung.ps1` setzt du alles wieder zurück.
 
-Danach geht es weiter mit `..\extra\MoveIt.ps1`, der vollständigen Version mit Probelauf (`-WhatIf`), Prüfungen und Zusammenfassung.
+Danach geht es weiter mit `..\extra\MoveItRealGood.ps1`, der vollständigen Version mit Probelauf (`-WhatIf`), Prüfungen und Zusammenfassung.

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Legt eine Spielwiese zum Ausprobieren von MoveIt.ps1 an.
+    Legt eine Spielwiese zum Ausprobieren von MoveItRealGood.ps1 an.
 
 .DESCRIPTION
     Erstellt im Ordner "Testumgebung" einen Projektordner mit Beispielverzeichnissen,
@@ -9,7 +9,7 @@
 
 .EXAMPLE
     .\New-Testumgebung.ps1
-    .\extra\MoveIt.ps1 -ListenDatei .\Testumgebung\Projektnummern.txt -ProjektOrdner .\Testumgebung\Projekte -ArchivOrdner .\Testumgebung\Archiv -WhatIf
+    .\extra\MoveItRealGood.ps1 -ListenDatei .\Testumgebung\Projektnummern.txt -ProjektOrdner .\Testumgebung\Projekte -ArchivOrdner .\Testumgebung\Archiv -WhatIf
 #>
 
 # $PSScriptRoot ist der Ordner, in dem dieses Skript liegt.

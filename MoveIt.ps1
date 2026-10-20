@@ -1,4 +1,4 @@
-# MoveIt - MVP
+# MoveIt
 # Verschiebt alle Ordner, deren Name mit einer Projektnummer aus der Liste beginnt, ins Archiv.
 
 param($ListenDatei, $ProjektOrdner, $ArchivOrdner)

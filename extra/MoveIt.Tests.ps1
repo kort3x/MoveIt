@@ -1,8 +1,8 @@
-# Automatische Tests fuer MoveIt.ps1 mit Pester.
+# Automatische Tests fuer MoveItRealGood.ps1 mit Pester.
 # Ausfuehren mit:  Invoke-Pester .\MoveIt.Tests.ps1 -Output Detailed
 
 BeforeAll {
-    $skript = Join-Path -Path $PSScriptRoot -ChildPath 'MoveIt.ps1'
+    $skript = Join-Path -Path $PSScriptRoot -ChildPath 'MoveItRealGood.ps1'
 }
 
 Describe 'MoveIt' {

@@ -24,12 +24,12 @@
     Zielordner. Wird angelegt, falls er noch nicht existiert.
 
 .EXAMPLE
-    .\MoveIt.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv -WhatIf
+    .\MoveItRealGood.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv -WhatIf
 
     Zeigt nur an, welche Verzeichnisse verschoben wuerden (Probelauf).
 
 .EXAMPLE
-    .\MoveIt.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv
+    .\MoveItRealGood.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv
 
     Verschiebt die Verzeichnisse wirklich.
 #>

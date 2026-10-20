@@ -2,7 +2,7 @@
 #
 # Ziel:  Die Pfade nicht mehr fest ins Skript schreiben, sondern beim Aufruf
 #        uebergeben. Dann funktioniert das Skript fuer jeden Kunden und jeden Ordner.
-#        Damit ist das Skript fertig - es ist genau MoveIt-MVP.ps1.
+#        Damit ist das Skript fertig - es ist genau ..\MoveIt.ps1.
 #
 # Neu:   - param( ) muss ganz oben im Skript stehen
 #        - Beim Aufruf werden die Werte der Reihe nach zugeordnet
@@ -28,6 +28,6 @@ foreach ($nummer in Get-Content $ListenDatei) {
     }
 }
 
-# Wie geht es weiter? Schau dir ..\extra\MoveIt.ps1 an. Dort ist dasselbe Skript
+# Wie geht es weiter? Schau dir ..\extra\MoveItRealGood.ps1 an. Dort ist dasselbe Skript
 # "erwachsen" geworden: Probelauf mit -WhatIf, Pruefung der Eingaben,
 # nichts wird ueberschrieben, und am Ende gibt es eine Zusammenfassung.
