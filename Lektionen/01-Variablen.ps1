@@ -15,9 +15,9 @@ $ListenDatei   = "$PSScriptRoot\..\Testumgebung\Projektnummern.txt"
 $ProjektOrdner = "$PSScriptRoot\..\Testumgebung\Projekte"
 $ArchivOrdner  = "$PSScriptRoot\..\Testumgebung\Archiv"
 
-Write-Host "Liste:     $ListenDatei" -ForegroundColor Cyan
-Write-Host "Projekte:  $ProjektOrdner" -ForegroundColor Cyan
-Write-Host "Archiv:    $ArchivOrdner" -ForegroundColor Cyan
+Write-Host "Liste:     $ListenDatei" -ForegroundColor Green
+Write-Host "Projekte:  $ProjektOrdner" -ForegroundColor Green
+Write-Host "Archiv:    $ArchivOrdner" -ForegroundColor Green
 
 # Aufgabe: Gib zusaetzlich deinen Namen aus. Lege dafuer eine Variable $Name an.
 # Aufgabe: Gib deinen Namen in einer anderen Farbe aus.
