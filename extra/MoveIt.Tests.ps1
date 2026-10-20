@@ -21,13 +21,13 @@ Describe 'MoveIt' {
     }
 
     It 'verschiebt alle Verzeichnisse, die mit einer Nummer der Liste beginnen' {
-        & $skript -ListenDatei $liste -ProjektOrdner $projekte -ArchivOrdner $archiv 6>$null 3>$null
+        & $skript -ListenDatei $liste -ProjektOrdner $projekte -ArchivOrdner $archiv -Force 6>$null 3>$null
 
         (Get-ChildItem $archiv).Name | Sort-Object | Should -Be @('042 Nachtrag', '042_Rathaus')
     }
 
     It 'laesst andere Verzeichnisse liegen - auch vierstellige Nummern' {
-        & $skript -ListenDatei $liste -ProjektOrdner $projekte -ArchivOrdner $archiv 6>$null 3>$null
+        & $skript -ListenDatei $liste -ProjektOrdner $projekte -ArchivOrdner $archiv -Force 6>$null 3>$null
 
         (Get-ChildItem $projekte).Name | Sort-Object | Should -Be @('0421_Andere Nummer', '107_Schule', 'Vorlagen')
     }
@@ -41,14 +41,14 @@ Describe 'MoveIt' {
     It 'ueberschreibt nichts, was schon im Archiv liegt' {
         New-Item -Path (Join-Path $archiv '042_Rathaus') -ItemType Directory -Force | Out-Null
 
-        & $skript -ListenDatei $liste -ProjektOrdner $projekte -ArchivOrdner $archiv 6>$null 3>$null
+        & $skript -ListenDatei $liste -ProjektOrdner $projekte -ArchivOrdner $archiv -Force 6>$null 3>$null
 
         Join-Path $projekte '042_Rathaus' | Should -Exist
         Join-Path $archiv '042 Nachtrag' | Should -Exist
     }
 
     It 'warnt bei ungueltigen Nummern und bei Nummern ohne Verzeichnis' {
-        $warnungen = & $skript -ListenDatei $liste -ProjektOrdner $projekte -ArchivOrdner $archiv 6>$null 3>&1
+        $warnungen = & $skript -ListenDatei $liste -ProjektOrdner $projekte -ArchivOrdner $archiv -Force 6>$null 3>&1
 
         $warnungen -join "`n" | Should -Match "'abc'"
         $warnungen -join "`n" | Should -Match '999'

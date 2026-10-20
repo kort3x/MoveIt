@@ -12,7 +12,7 @@ Die Liste ist eine Textdatei mit einer Nummer pro Zeile. Leere Zeilen und Zeilen
 # 1. Immer zuerst ein Probelauf: zeigt nur an, was passieren würde
 .\extra\MoveItRealGood.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv -WhatIf
 
-# 2. Wenn alles stimmt: wirklich verschieben
+# 2. Wenn alles stimmt: wirklich verschieben (das Skript zeigt die Ordner und fragt einmal nach)
 .\extra\MoveItRealGood.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv
 ```
 
@@ -20,6 +20,7 @@ Regeln:
 
 - Verschoben wird jedes Verzeichnis, dessen Name mit einer Nummer der Liste beginnt, zum Beispiel `042_Neubau`, `042 Nachtrag` oder `042-Alt`.
 - `0421_Irgendwas` wird **nicht** verschoben, denn das ist eine andere Nummer.
+- Vor dem Verschieben zeigt das Skript, wie viele Verzeichnisse es gefunden hat und wie sie heißen, und fragt einmal nach. Mit `-Force` entfällt die Rückfrage.
 - Liegt im Archiv schon ein Ordner mit demselben Namen, wird nichts überschrieben. Das Skript gibt dann eine Warnung aus.
 - Am Ende sagt das Skript, für welche Nummern es kein Verzeichnis gefunden hat. Das ist wichtig für die Rückmeldung an den Kunden.
 
@@ -44,11 +45,12 @@ Was du in [extra/MoveItRealGood.ps1](extra/MoveItRealGood.ps1) lernen kannst (di
 |---|---|
 | Kommentarbasierte Hilfe (`Get-Help`) | Block ganz oben |
 | Parameter, Pflichtparameter, Validierung | `param(...)` |
-| `-WhatIf` mit `SupportsShouldProcess` / `ShouldProcess` | `CmdletBinding`, Schritt 3 |
+| `-WhatIf` mit `SupportsShouldProcess` / `ShouldProcess` | `CmdletBinding`, Schritt 4 |
+| Rückfrage mit `ShouldContinue`, Schalter `[switch]` (`-Force`) | `param(...)`, Schritt 3 |
 | Pipeline, `$_`, `ForEach-Object`, `Where-Object` | Schritt 1 |
 | Reguläre Ausdrücke mit `-match`, `$Matches` | Schritt 1 und 2 |
-| Arrays, `-contains`, `-notcontains`, `Sort-Object -Unique` | Schritt 1, 2 und 4 |
-| `Get-ChildItem`, `Test-Path`, `Join-Path`, `New-Item`, `Move-Item` | Schritt 2 und 3 |
+| Arrays, `-contains`, `-notcontains`, `Sort-Object -Unique` | Schritt 1, 2 und 5 |
+| `Get-ChildItem`, `Test-Path`, `Join-Path`, `New-Item`, `Move-Item` | Schritt 2 und 4 |
 | `Write-Host` und `Write-Warning` | überall |
 
 Kleine Übungen:

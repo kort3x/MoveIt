@@ -23,6 +23,9 @@
 .PARAMETER ArchivOrdner
     Zielordner. Wird angelegt, falls er noch nicht existiert.
 
+.PARAMETER Force
+    Verschiebt ohne die Rueckfrage vorher. Nur verwenden, wenn du dir sicher bist!
+
 .EXAMPLE
     .\MoveItRealGood.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv -WhatIf
 
@@ -31,7 +34,7 @@
 .EXAMPLE
     .\MoveItRealGood.ps1 -ListenDatei .\Projektnummern.txt -ProjektOrdner D:\Projekte -ArchivOrdner D:\Archiv
 
-    Verschiebt die Verzeichnisse wirklich.
+    Zeigt die gefundenen Verzeichnisse, fragt einmal nach und verschiebt sie dann wirklich.
 #>
 
 # [CmdletBinding] macht aus dem Skript ein "fortgeschrittenes" Skript.
@@ -49,7 +52,10 @@ param(
     [string]$ProjektOrdner,
 
     [Parameter(Mandatory)]
-    [string]$ArchivOrdner
+    [string]$ArchivOrdner,
+
+    # [switch] ist ein Schalter: angegeben = $true, weggelassen = $false.
+    [switch]$Force
 )
 
 # Bei jedem Fehler sofort abbrechen, statt still weiterzumachen.
@@ -113,7 +119,24 @@ if (-not $treffer) {
 }
 
 
-# --- Schritt 3: Verzeichnisse ins Archiv verschieben -------------------------------
+# --- Schritt 3: Einmal nachfragen, bevor es ernst wird -----------------------------
+
+# Bei -WhatIf wird ohnehin nichts verschoben, also braucht es keine Rueckfrage.
+# $WhatIfPreference ist $true, wenn das Skript mit -WhatIf gestartet wurde.
+if (-not $WhatIfPreference -and -not $Force) {
+    $anzahl = @($treffer).Count
+    $namen = ($treffer | ForEach-Object { "   $($_.Name)" }) -join "`n"
+
+    # ShouldContinue zeigt einen Ja/Nein-Dialog und liefert $true bei "Ja".
+    $frage = "$anzahl Verzeichnisse gefunden:`n$namen`n`nAlle nach '$ArchivOrdner' verschieben?"
+    if (-not $PSCmdlet.ShouldContinue($frage, 'Verschieben bestaetigen')) {
+        Write-Host 'Abgebrochen. Es wurde nichts verschoben.' -ForegroundColor Yellow
+        return
+    }
+}
+
+
+# --- Schritt 4: Verzeichnisse ins Archiv verschieben -------------------------------
 
 if (-not (Test-Path -Path $ArchivOrdner)) {
     # Out-Null verschluckt die Ausgabe von New-Item, damit die Konsole sauber bleibt.
@@ -144,7 +167,7 @@ foreach ($verzeichnis in $treffer) {
 }
 
 
-# --- Schritt 4: Zusammenfassung ----------------------------------------------------
+# --- Schritt 5: Zusammenfassung ----------------------------------------------------
 
 # Welche Nummern standen auf der Liste, haben aber keinen Ordner gefunden?
 # Das ist wichtig fuer die Rueckmeldung an den Kunden.
