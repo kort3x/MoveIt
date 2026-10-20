@@ -92,7 +92,7 @@ if (-not $projektNummern) {
     return
 }
 
-Write-Host "Projektnummern aus der Liste: $($projektNummern -join ', ')" -ForegroundColor Cyan
+Write-Host "Projektnummern aus der Liste: $($projektNummern -join ', ')" -ForegroundColor Magenta
 
 
 # --- Schritt 2: Passende Verzeichnisse im Projektordner finden ---------------------

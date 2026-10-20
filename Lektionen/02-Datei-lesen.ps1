@@ -11,7 +11,7 @@ $ProjektOrdner = "$PSScriptRoot\..\Testumgebung\Projekte"
 $ArchivOrdner  = "$PSScriptRoot\..\Testumgebung\Archiv"
 
 foreach ($nummer in Get-Content $ListenDatei) {
-    Write-Host "Nummer aus der Liste: [$nummer]" -ForegroundColor Cyan
+    Write-Host "Nummer aus der Liste: [$nummer]" -ForegroundColor Magenta
 }
 
 # Die eckigen Klammern [ ] sind nur zur Anzeige da. So sieht man Leerzeichen
