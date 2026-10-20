@@ -28,6 +28,6 @@ foreach ($nummer in Get-Content $ListenDatei) {
     }
 }
 
-# Wie geht es weiter? Schau dir ..\MoveIt.ps1 an. Dort ist dasselbe Skript
+# Wie geht es weiter? Schau dir ..\extra\MoveIt.ps1 an. Dort ist dasselbe Skript
 # "erwachsen" geworden: Probelauf mit -WhatIf, Pruefung der Eingaben,
 # nichts wird ueberschrieben, und am Ende gibt es eine Zusammenfassung.

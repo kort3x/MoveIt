@@ -9,7 +9,7 @@
 
 .EXAMPLE
     .\New-Testumgebung.ps1
-    .\MoveIt.ps1 -ListenDatei .\Testumgebung\Projektnummern.txt -ProjektOrdner .\Testumgebung\Projekte -ArchivOrdner .\Testumgebung\Archiv -WhatIf
+    .\extra\MoveIt.ps1 -ListenDatei .\Testumgebung\Projektnummern.txt -ProjektOrdner .\Testumgebung\Projekte -ArchivOrdner .\Testumgebung\Archiv -WhatIf
 #>
 
 # $PSScriptRoot ist der Ordner, in dem dieses Skript liegt.
